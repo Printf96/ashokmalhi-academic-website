@@ -6,7 +6,7 @@
   "main": "dist/server/src/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "npx --no-install tsc -p tsconfig.json",
+    "build": "node -e \"console.log('DIAG typescript version:', require('typescript/package.json').version, 'resolved at:', require.resolve('typescript/package.json'))\" && npx --no-install tsc -p tsconfig.json",
     "start": "node dist/server/src/index.js",
     "typecheck": "npx --no-install tsc --noEmit",
     "lint": "eslint src --ext .ts",
