@@ -1,0 +1,13 @@
+.section {
+  padding-block: var(--space-8);
+}
+
+.header {
+  max-width: 720px;
+  margin-bottom: var(--space-6);
+}
+
+.description {
+  font-size: var(--fs-lg);
+  color: var(--color-text-secondary);
+}

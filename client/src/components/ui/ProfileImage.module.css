@@ -1,0 +1,45 @@
+.wrapper {
+  width: 220px;
+  height: 220px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface-2);
+  flex-shrink: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* No CSS filter applied: the served asset is already a true
+     grayscale conversion of the verified source photograph, done once
+     during image processing rather than approximated at render time. */
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.placeholderMono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  padding-inline: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    width: 160px;
+    height: 160px;
+  }
+}

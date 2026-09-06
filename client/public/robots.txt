@@ -1,0 +1,9 @@
+# This static fallback is used only when the client is served/previewed
+# standalone (e.g. `vite preview`) without the Express server in front.
+# In production, /robots.txt is served dynamically by the API
+# (see server/src/controllers/seoController.ts) so it always reflects
+# the live SITE_URL.
+User-agent: *
+Allow: /
+
+Sitemap: https://ashokmalhi.pro/sitemap.xml

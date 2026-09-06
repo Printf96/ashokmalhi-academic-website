@@ -1,0 +1,116 @@
+.hero {
+  padding-block: var(--space-8) var(--space-7);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.heroInner {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.heroText {
+  flex: 1;
+}
+
+.eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.name {
+  font-size: var(--fs-4xl);
+  margin-bottom: var(--space-2);
+}
+
+.titleLine {
+  font-size: var(--fs-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+.titleLine strong {
+  color: var(--color-text-primary);
+}
+
+.bio {
+  font-size: var(--fs-lg);
+  max-width: 620px;
+  margin-bottom: var(--space-5);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.btnPrimary {
+  background: var(--color-accent-primary);
+  color: #04141a;
+}
+
+.btnPrimary:hover {
+  background: var(--color-accent-secondary);
+  color: #04141a;
+}
+
+.btnSecondary {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-primary);
+}
+
+.btnSecondary:hover {
+  border-color: var(--color-accent-primary);
+  color: var(--color-accent-primary);
+}
+
+.interestGrid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.interestChip {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+}
+
+.pubGrid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+.viewAllRow {
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 720px) {
+  .heroInner {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 720px) {
+  .pubGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

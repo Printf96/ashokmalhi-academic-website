@@ -1,0 +1,131 @@
+/*
+ * Desktop: fixed vertical rail on the right edge, visible while
+ * scrolling, never overlapping nav/content/footer (positioned in the
+ * vertical middle with its own scroll-independent fixed position).
+ * Mobile: becomes a compact static horizontal row (see the
+ * max-width query) so it can never cover content on small viewports.
+ */
+.rail {
+  position: fixed;
+  top: 50%;
+  right: var(--space-4);
+  transform: translateY(-50%);
+  z-index: 90;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-2);
+  background: rgba(21, 27, 35, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.item {
+  display: flex;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+  position: relative;
+  /* Reset native <button> chrome so active links (<a>) and coming-soon
+     placeholders (<button>) look identical apart from the coming-soon
+     modifiers below. */
+  background: transparent;
+  border: none;
+  font: inherit;
+  padding: 0;
+}
+
+.iconLink:hover {
+  color: var(--color-accent-primary);
+  background: var(--color-surface-2);
+}
+
+/*
+ * Coming-soon state: never communicated by color alone. Reduced
+ * opacity + a dashed border + a small dot indicator + the tooltip text
+ * together mark it as inactive. Rendered as a real <button
+ * aria-disabled="true"> rather than a plain span: it stays naturally
+ * focusable and announced via aria-label so screen-reader/keyboard
+ * users get the same "not yet active" information sighted users see,
+ * but its click handler is a no-op (no href, no navigation) and it
+ * never keyboard-traps — Tab moves past it like any other control.
+ */
+.comingSoon {
+  opacity: 0.45;
+  border: 1px dashed var(--color-border-strong) !important;
+  cursor: default;
+}
+
+.comingSoon:hover {
+  color: var(--color-text-secondary);
+  background: transparent;
+}
+
+.comingSoonDot {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iconLink {
+    transition: none;
+  }
+}
+
+/* Tablet: slightly tighter spacing, same fixed vertical arrangement. */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .rail {
+    right: var(--space-3);
+  }
+}
+
+/*
+ * Mobile: the fixed vertical rail would cover content on narrow
+ * viewports, so it converts to a static horizontal row instead —
+ * placed inline (rendered just above the footer in Layout.tsx) rather
+ * than fixed, so it can never obstruct navigation, forms, or the
+ * footer itself.
+ */
+@media (max-width: 768px) {
+  .rail {
+    position: static;
+    top: auto;
+    right: auto;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    padding: var(--space-4) 0;
+  }
+
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
+  }
+}

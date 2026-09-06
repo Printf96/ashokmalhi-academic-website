@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Build output
+dist/
+build/
+*/dist/
+*/build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Testing
+coverage/
+
+# Original (non-web) photo assets are kept out of the public repo
+assets/original/*
+!assets/original/.gitkeep
+
+# Misc
+*.tsbuildinfo
+.cache/

@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 100px;
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xl);
+  color: var(--color-accent-primary);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.footnote {
+  flex-basis: 100%;
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-3);
+  margin-top: var(--space-2);
+}

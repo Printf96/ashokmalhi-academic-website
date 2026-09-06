@@ -1,0 +1,66 @@
+.header {
+  padding-block: var(--space-7) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.backLink {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-3);
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.inferredNote {
+  font-size: var(--fs-xs);
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.detailGrid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+  margin-block: var(--space-6);
+}
+
+.detailItem {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.detailLabel {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+.detailValue {
+  color: var(--color-text-primary);
+}
+
+@media (min-width: 640px) {
+  .detailGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
