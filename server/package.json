@@ -6,9 +6,9 @@
   "main": "dist/server/src/index.js",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "npx --no-install tsc -p tsconfig.json",
     "start": "node dist/server/src/index.js",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "npx --no-install tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "seed": "tsx src/seed/run.ts",
     "test": "vitest run"
